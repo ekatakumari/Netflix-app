@@ -3,6 +3,10 @@
 ->Configured TailwindCss
 ->Build Header
 ->Login-form
+->signup form 
+->routing
+->form validation
+->useRef hook
 
 
 # Features
