@@ -37,17 +37,18 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: displayName.current.value,
-            photoUrl:
+            photoURL:
               "https://static.vecteezy.com/system/resources/previews/029/796/026/non_2x/asian-girl-anime-avatar-ai-art-photo.jpg",
           })
             .then(() => {
-              const { uid, email, displayName, photoUrl } = auth.currentUser;
+              console.log(auth);
+              const { uid, email, displayName, photoURL } = auth.currentUser;
               dispatch(
                 addUser({
                   uid: uid,
                   email: email,
                   displayName: displayName,
-                  photoUrl: photoUrl,
+                  photoURL: photoURL,
                 })
               );
               navigate("/browse");
@@ -55,7 +56,6 @@ const Login = () => {
             .catch((error) => {
               setErrorMessage(error.message);
             });
-          console.log(user);
         })
         .catch((error) => {
           console.log(error.code);

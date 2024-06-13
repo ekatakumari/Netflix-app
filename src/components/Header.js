@@ -6,7 +6,10 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const navigate = useNavigate();
-  const user=useSelector((store)=>store.user)
+  const user=useSelector((store)=>
+   store.user
+  )
+  console.log(user)
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -28,7 +31,7 @@ const Header = () => {
         <img
           className="w-12 h-12 "
           alt="userIcon"
-          src={user?.photoUrl}
+          src={user?.photoURL}
         />
         <button onClick={handleSignOut} className="font-bold text-white">
           signOut
