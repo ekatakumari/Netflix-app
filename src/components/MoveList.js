@@ -5,7 +5,7 @@ const MoveList = ({ title, movies }) => {
   return (
     <div className="px-6 ">
       <h1 className="text-4xl py-4 text-white">{title}</h1>
-      <div styleclassName="flex overflow-x-scroll ">
+      <div className="flex overflow-x-scroll ">
         <div className="flex">
           {movies &&
             movies.map((movie) => (
@@ -13,9 +13,7 @@ const MoveList = ({ title, movies }) => {
             ))}
         </div>
       </div>
-      
     </div>
-    
   );
 };
 
