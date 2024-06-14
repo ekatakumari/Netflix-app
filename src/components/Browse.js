@@ -1,6 +1,7 @@
 
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import usePopularMovie from "../hooks/usePopularMovie";
+import GptSearch from "./GptSearch";
 import Header from "./Header";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
@@ -12,6 +13,7 @@ usePopularMovie()
   return (
     <div>
       <Header />
+      <GptSearch/>
       <MainContainer/>
       <SecondaryContainer/>
     </div>

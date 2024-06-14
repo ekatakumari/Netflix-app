@@ -7,6 +7,7 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { Logo } from "../utils/constant";
+import { toggleGptSearchView } from "../utils/gptSlice";
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,9 +22,13 @@ const Header = () => {
         navigate("/error");
       });
   };
+  const handleGptSearchClick=()=>{
+    dispatch(toggleGptSearchView())
+  }
   useEffect(() => {
    const unSubscribe= onAuthStateChanged(auth, (user) => {
       if (user) {
+
         const { uid, email, displayName, photoURL } = user;
         dispatch(
           addUser({
@@ -50,6 +55,7 @@ const Header = () => {
         alt="netflix Logo"
       />
       {user &&<div className="flex p-2">
+        <button className="py-2 px-4 bg-purple-800 text-white rounded-lg mx-4 my-2" onClick={handleGptSearchClick}>GPT Search</button>
         <img
           className="w-12 h-12 "
           alt="userIcon"
