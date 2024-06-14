@@ -9,6 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVTAR } from "../utils/constant";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -35,11 +36,10 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: displayName.current.value,
-            photoURL:
-              "https://static.vecteezy.com/system/resources/previews/029/796/026/non_2x/asian-girl-anime-avatar-ai-art-photo.jpg",
+            photoURL:USER_AVTAR
+              
           })
             .then(() => {
-              console.log(auth);
               const { uid, email, displayName, photoURL } = auth.currentUser;
               dispatch(
                 addUser({
@@ -55,7 +55,6 @@ const Login = () => {
             });
         })
         .catch((error) => {
-          console.log(error.code);
           setErrorMessage(error.message);
         });
     } else {
