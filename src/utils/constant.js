@@ -6,7 +6,7 @@ export const API_OPTION = {
   method: "GET",
   headers: {
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZGUzNmQzMDI0ZGJiODhiMThiZDYzOWIzMDU4ZDhiOCIsInN1YiI6IjY2NmJjZmM0MjJjMjljNWRmNTM4NWZkMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VN5dCXw62sbHD2k96WcmDEm93djKT5ptQ200mvq_mo0",
+      "Bearer"+process.env.REACT_APP_TMDB_KEY,
     accept: "application/json",
   },
 };
@@ -26,3 +26,6 @@ export const SUPPORTED_LANGUAGES=[
     name:"Spanish"
   }
 ]
+export const OPEN_AI_KEY=process.env.REACT_APP_OPEN_AI_KEY
+export const play_icon="https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-play-icon-png-image_956416.jpg"
+export const INFO_ICON="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
